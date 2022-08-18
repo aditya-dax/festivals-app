@@ -54,6 +54,7 @@ public class ProjectController {
 	public ResponseEntity<?> getFestival(@PathVariable("festivalId") String festivalId) {
 		
 		try {
+			System.out.println("Changes for PR");
 			Festival festival = festivalService.getFestival(Long.parseLong(festivalId));
 			return new ResponseEntity<Festival>(festival, HttpStatus.OK);
 		} catch (BusinessException e ) {
