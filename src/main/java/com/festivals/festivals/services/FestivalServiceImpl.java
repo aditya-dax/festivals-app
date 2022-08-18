@@ -111,7 +111,6 @@ public class FestivalServiceImpl implements FestivalService {
 		// SuppressWarnings("deprecation")
 		@SuppressWarnings("deprecation")
 		Festival entity = festivalDao.getReferenceById(parseLong);
-		System.out.println(entity.size());
 		if(entity==new Festival()) {
 			System.out.println(entity);
 			throw new BusinessException("608", "given festival ID is null, send another");

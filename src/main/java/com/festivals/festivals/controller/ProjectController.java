@@ -109,12 +109,7 @@ public class ProjectController {
 
 	@DeleteMapping("/festivals/{festivalId}")
 	public ResponseEntity<?> deleteFestival(@PathVariable String festivalId) {
-//		try {
-//
-//			List<Festival> list = festivalService.getFestivals();
-//			if (list.size() <= 0) {
-//				return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-//			}
+
 		try {
 			this.festivalService.deleteFestival(Long.parseLong(festivalId));
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -126,10 +121,6 @@ public class ProjectController {
 			return new ResponseEntity<ControllerException>(ce, HttpStatus.BAD_REQUEST);
 		}
 
-//			this.festivalService.deleteFestival(Long.parseLong(festivalId));
-//			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//		} catch (Exception e) {
-//			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
+
 	}
 }
